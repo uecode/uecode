@@ -15,7 +15,8 @@ class Uecode
 	 * @static
 	 * @param mixed $var Array or Object to Dump
 	 * @param int $depth depth to decent into $var
-	 * @param null $callback Function to call after
+	 * @param boolean $die Do we die after being called
+	 * @param boolean $dumpOut Do we return our output instead of echoing it
 	 * @return string
 	 */
 	public static function dump( $var, $depth = 5, $die = false, $dumpOut = false )
