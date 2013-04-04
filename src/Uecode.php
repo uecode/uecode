@@ -222,7 +222,7 @@ class Uecode
 		}
 
 		foreach( $out as $key => $value ) {
-			if( !is_nan( $key ) ) {
+			if( is_numeric( $key ) ) {
 				unset( $out[ $key ] );
 			}
 		}
