@@ -18,7 +18,7 @@
 		"email": "aaron@undergroundelephant.com"
 	},
 	"require":     {
-		"php":                          ">=5.3.0",
+		"php": ">=5.3.0"
 	},
 	"autoload":    {
 		"psr-0": {
