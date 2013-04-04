@@ -184,4 +184,45 @@ class Uecode
 		}
 		return $echo;
 	}
+
+	/**
+	 * Parse a URL
+	 *
+	 * @param string $url Url to parse
+	 */
+	public static function parseUrl($url)
+	{
+		$r  = "^(?:(?P<scheme>\w+)://)?";
+		$r .= "(?:(?P<login>\w+):(?P<pass>\w+)@)?";
+		$r .= "(?P<host>(?:(?P<subdomain>[-\w\.]+)\.)?" . "(?P<domain>[-\w]+\.(?P<extension>\w+)))";
+		$r .= "(?::(?P<port>\d+))?";
+		$r .= "(?P<path>[\w/-]*/(?P<file>[\w-]+(?:\.\w+)?)?)?";
+		$r .= "(?:\?(?P<arg>[\w=&]+))?";
+		$r .= "(?:#(?P<anchor>\w+))?";
+		$r = "!$r!";
+
+		preg_match ( $r, $url, $out );
+
+		$joinedExtensions = array('us.com', 'us.org', 'us.net');
+		if(in_array($out['domain'], $joinedExtensions))
+		{
+			if(strpos($out['subdomain'], '.') !== false)
+			{
+				$temp = explode('.', $out['subdomain']);
+				$out['subdomain'] = $temp[0];
+				$out['extension'] = $out['domain'];
+				$out['domain'] = $temp[1] . '.' . $out['domain'];
+			}
+			else
+			{
+				$out['extension'] = $out['domain'];
+				$out['domain'] = $out['subdomain'] . '.' . $out['domain'];
+				$out['subdomain'] = '';
+			}
+		}
+
+
+
+		return $out;
+	}
 }
