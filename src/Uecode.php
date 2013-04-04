@@ -221,7 +221,11 @@ class Uecode
 			}
 		}
 
-
+		foreach( $out as $key => $value ) {
+			if( !is_nan( $key ) ) {
+				unset( $out[ $key ] );
+			}
+		}
 
 		return $out;
 	}
