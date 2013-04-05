@@ -226,6 +226,9 @@ class Uecode
 				unset( $out[ $key ] );
 			}
 		}
+		
+		$out[ 'pathFull' ] = $out[ 'path' ];
+		$out[ 'path' ] = explode( '/', ltrim( $out[ 'path' ], '/' ) );
 
 		return $out;
 	}
