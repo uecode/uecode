@@ -228,7 +228,7 @@ class Uecode
 		}
 		
 		$out[ 'pathFull' ] = $out[ 'path' ];
-		$out[ 'path' ] = explode( '/', ltrim( $out[ 'path' ], '/' ) );
+		$out[ 'path' ] = explode( '/', trim( $out[ 'path' ], '/' ) );
 
 		return $out;
 	}
