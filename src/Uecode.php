@@ -42,11 +42,10 @@ class Uecode
 			}
 		$var = $old;
 
-		$echo .= "<div class='debugDump'>\n\t\t\t<div class='header'>\n\t\t\t\t<h2>Debug</h2>\n\t\t\t</div>";
-		$echo .= "\n\t\t\t<section style='font-size: 11px; line-height: 13px; background-color: white; padding: 10px; overflow-x: auto;'>";
+		$echo .= "<div class='debugDump'>\n\t\t\t";
 		$echo .= "\n\t\t\t\t<pre style='word-wrap: break-word'>";
 		$echo .= "\n\t\t\t\t\t" . self::do_dump($var, '$' . $vname, NULL, NULL, $depth);
-		$echo .= "\n\t\t\t\t</pre>\n\t\t\t</section>\n\t\t</div>";
+		$echo .= "\n\t\t\t\t</pre>\n\t\t\t</div>";
 
 		if($dumpOut === false ) {
 			if( $die ) {
