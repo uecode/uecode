@@ -29,6 +29,8 @@ class Uecode
 		$scope  = false;
 		$prefix = 'unique';
 		$suffix = 'value';
+		
+		$isCli = php_sapi_name() === 'cli';
 
 		if ( $scope ) {
 			$vals = $scope;
@@ -50,12 +52,17 @@ class Uecode
 		$echo .= "\n\t\t\t\t<pre style='word-wrap: break-word'>";
 		$echo .= "\n\t\t\t\t\t" . self::do_dump( $var, '$' . $vname, null, null, $depth );
 		$echo .= "\n\t\t\t\t</pre>\n\t\t\t</div>";
+		
+		if( $isCli ) {
+			$echo = strip_tags( str_replace( "&nbsp;", " ",  $echo ) );
+		}
 
 		if ( $dumpOut === false ) {
 			if ( $die ) {
-				$html = "<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />\n\t\t<title>Dump</title>\n\t</head>\n\t<body>";
-				$html .= "\n\t\t" . $echo . "\n\t</body>\n</html>";
-				die( $html );
+				if( $isCli ) {
+					die( $echo );
+				}
+				die( "<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />\n\t\t<title>Dump</title>\n\t</head>\n\t<body>\n\t\t" . $echo . "\n\t</body>\n</html>" );
 			}
 			echo $echo;
 
