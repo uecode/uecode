@@ -1,6 +1,5 @@
 {
 	"name":        "uecode/uecode",
-	"version":     "1.0.0",
 	"type":        "library",
 	"description": "Uecode Library",
 	"keywords":    ["php", "uecode"],
