@@ -5,7 +5,7 @@
 	"description": "Uecode Library",
 	"keywords":    ["php", "uecode"],
 	"homepage":    "https://github.com/uecode/uecode",
-	"license":     "Apache",
+	"license":     "Apache-2.0",
 	"authors":     [
 		{
 			"name":     "Aaron Scherer",
@@ -19,7 +19,7 @@
 	},
 	"require":     {
 		"php": ">=5.3.0",
-		"symfony/dependency-injection": "2.2.1"
+		"symfony/dependency-injection": ">2.2.0,<2.4.*-dev"
 	},
 	"autoload":    {
 		"psr-0": {
