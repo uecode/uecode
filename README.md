@@ -26,3 +26,7 @@ If you want to contribute, just fork your own repo, and make your changes, then 
 Looking for a job?
 =====
 Email Aaron Scherer at aaron@undergroundelephant.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/uecode/uecode/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
