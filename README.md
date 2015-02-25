@@ -1,32 +1,6 @@
-Underground Elephant Library
-======
+### Deprecated Library
 
-1. To Install
-	
-	```sh
-	composer require uecode/uecode dev/master
-	```
+The key benefits of the ``dump()`` method are better implemented and maintained in [Ladybug: PHP 5.3+ Extensible Dumper](https://github.com/raulfraile/ladybug).  It's suggested that you use that library.
 
-2. To Use, after autoloading
-
-	```php
-	// Saves the dump of the $variable var, going down four layers, into $save
-	$save = \Uecode::dump( $variable, 4, false, true );
-
-	// Dumps the $variable var, going down three layers, and then dies
-	\Uecode::dump( $variable, 3, true );
-	```
-
-Contributing
-=====
-
-If you want to contribute, just fork your own repo, and make your changes, then submit a pull request.
-
-
-Looking for a job?
-=====
-Email Aaron Scherer at aaron@undergroundelephant.com
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/uecode/uecode/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+This code will no longer be supported.
 
